@@ -36,20 +36,20 @@ As a user, I want the ability to...
   - read a list of all of the crafts I have favorited. 
   - remove crafts from my favorites. 
 
+Back up idea:
+My bucketlist Travel and book tracker
+Overview:
+A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
+
+
+Schedule:
+Momday: Pitch idea and Seed db
+Tuesday: Testing with postman and make sure Back End is good to go
+Wednesday: Front End
+Thursday: Front End
+Friday: Ask all questions I need answered before the weekend
+Saturday and Sunday: Polish all details
 
 Wireframes:
 
 
-
-
-
-
-
-
-
-
-Back up idea:
-
-My bucketlist Travel and book tracker
-Overview:
-A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
