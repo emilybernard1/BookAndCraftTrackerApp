@@ -59,3 +59,11 @@ Wireframes:
 <img width="788" alt="WireFrame3ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731129-bcb76be5-66e7-472d-8903-f484a16e4d5f.png">
 
 <img width="792" alt="WireFrame4ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731132-3d0dcef6-6635-4742-b423-630812b18ee7.png">
+
+ERDs 
+User and Books
+<img width="780" alt="ERDUsersAndBooks" src="https://user-images.githubusercontent.com/77028684/194770464-81c1ecbf-2119-4190-b187-693cf6c6dbdc.png">
+
+User and Crafts
+<img width="783" alt="ERDUsersAndCrafts" src="https://user-images.githubusercontent.com/77028684/194770472-f87f27a1-0976-4da3-9f38-404fd6e16c78.png">
+
