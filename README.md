@@ -50,6 +50,10 @@ Thursday: Front End
 Friday: Ask all questions I need answered before the weekend
 Saturday and Sunday: Polish all details
 
+Goals:
+Primary: Make sure I really understand and build a solid foundation of how to build a back end
+Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+
 Wireframes:
 
 <img width="790" alt="WireFrame1ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731119-d74ba618-0487-4118-a050-38c7325b90d5.png">
