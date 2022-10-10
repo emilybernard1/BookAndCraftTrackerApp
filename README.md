@@ -87,7 +87,7 @@ const startCrafts = [
 ---------------
 - Primary: Make sure I really understand and build a solid foundation of how to build a back end
 
-- Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+- Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. Adding Cover Art for the books. 
 
 
 
@@ -114,9 +114,13 @@ const startCrafts = [
 
 <img width="793" alt="WireFrame2ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731127-bbb3d8b3-19e7-4ef9-95e2-f889ca708142.png">
 
-<img width="788" alt="WireFrame3ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731129-bcb76be5-66e7-472d-8903-f484a16e4d5f.png">
+<img width="782" alt="BooksPage" src="https://user-images.githubusercontent.com/77028684/194932640-73ed6762-9133-45a6-82da-a55955d5c504.png">
 
-<img width="792" alt="WireFrame4ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731132-3d0dcef6-6635-4742-b423-630812b18ee7.png">
+<img width="784" alt="SingleBook" src="https://user-images.githubusercontent.com/77028684/194932654-9686a2bb-bb5c-4e5c-9488-d498bf90e410.png">
+
+<img width="786" alt="CraftsPage" src="https://user-images.githubusercontent.com/77028684/194932667-9c2e6612-f8fa-4acf-bb88-5f512f549a3a.png">
+
+<img width="774" alt="SingleCraft" src="https://user-images.githubusercontent.com/77028684/194932684-6f6abc36-d69e-4a7f-9209-fc62345bea89.png">
 
 
 
