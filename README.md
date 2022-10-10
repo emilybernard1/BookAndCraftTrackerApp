@@ -3,9 +3,9 @@
 
 ## OVERVIEW
 -----------------
--If your brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
+- If your brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
 
--With this app, you'll have a handy database of all of the books you want to read and crafts you want to do once bootcamp is over! 
+- With this app, you'll have a handy database of all of the books you want to read and crafts you want to do once bootcamp is over! 
 
 
 
