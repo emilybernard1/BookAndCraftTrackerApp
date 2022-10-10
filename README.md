@@ -68,33 +68,37 @@ const startCrafts = [
 
 ### SCHEDULE
 ------------------
--Monday: Pitch idea, Seed db, Get the back end going
+- Monday: Pitch idea, Seed db, Get the back end going
 
--Tuesday: Testing with postman and make sure Back End is good to go
+- Tuesday: Testing with postman and make sure Back End is good to go
 
--Wednesday: Front End
+- Wednesday: Front End
 
--Thursday: Front End
+- Thursday: Front End
 
--Friday: Ask all questions I need answered before the weekend
+- Friday: Ask all questions I need answered before the weekend
 
--Saturday and Sunday: Polish all details
+- Saturday and Sunday: Polish all details
+
 
 
 
 ### GOALS
 ---------------
--Primary: Make sure I really understand and build a solid foundation of how to build a back end
+- Primary: Make sure I really understand and build a solid foundation of how to build a back end
 
--Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+- Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+
 
 
 
 ### FUTURE VERSION POSIBILITIES
 ----------------------------
--Make it so the user can decide anything they want to log/track
+- Make it so the user can decide anything they want to log/track
 
--Could make it into more of an online BUJO
+- Could make it into more of an online BUJO
+
+
 
 
 ### MVP
@@ -118,9 +122,6 @@ const startCrafts = [
 
 ### ERDs 
 ---------------
-### User and Books
-<img width="780" alt="ERDUsersAndBooks" src="https://user-images.githubusercontent.com/77028684/194770464-81c1ecbf-2119-4190-b187-693cf6c6dbdc.png">
-
-### User and Crafts
-<img width="783" alt="ERDUsersAndCrafts" src="https://user-images.githubusercontent.com/77028684/194770472-f87f27a1-0976-4da3-9f38-404fd6e16c78.png">
+### User to Crafts and Books
+<img width="631" alt="ERDUsersToCraftsAndBooks" src="https://user-images.githubusercontent.com/77028684/194931128-01ca3481-9e10-419a-87f0-0c790023be1c.png">
 
