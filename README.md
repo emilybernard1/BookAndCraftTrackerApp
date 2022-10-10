@@ -41,18 +41,20 @@ As a user, I want the ability to...
   - remove crafts from my favorites. 
 
 Example Seed Data:
- const startBooks = [
+```const startBooks = [
         { name: "La Fille qui lisait dans le métro", genre: "French Literature", read: false },
         { name: "The Mystwick School of Music Craftr", genre: "Young Adult Fantasy", read: false },
         { name: "A Summer Wedding", genre: "Chick Lit", read: false },
         { name: "Hocus Pocus 2", genre: "Fantasy", read: true },
   ]
+```
     
-const startCrafts = [
+```const startCrafts = [
     { name: "Create Your Own Succulent Hanger", materials: "Kit", stored: "In the top of my closet", time: "30 min to 1 hour" },
-	{ name: "Blanket for Ryleigh", materials: "top fabric, bottom fabric, blanket binding", stored: "the skinny part of my closet", time: "2 hours" }
-	{ name: "Coloring Book for Vivi", materials: "Book, pencils, eraser, black G2-10 pen", stored: "under my desk", time: "so much" }
+    { name: "Blanket for Ryleigh", materials: "top fabric, bottom fabric, blanket binding", stored: "the skinny part of my closet", time: "2 hours" }
+    { name: "Coloring Book for Vivi", materials: "Book, pencils, eraser, black G2-10 pen", stored: "under my desk", time: "so much" }
 ]
+```
     
 
 Schedule:
