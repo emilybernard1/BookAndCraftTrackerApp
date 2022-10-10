@@ -47,7 +47,8 @@ As a user, I want the ability to...
 
 ### EXAMPLE SEED DATA
 -------------------
-```const startBooks = [
+```
+const startBooks = [
         { name: "La Fille qui lisait dans le métro", author: "Christine Féret-Fleury", genre: "French Literature", pages: 170, read: false },
         { name: "The Mystwick School of Music Craft", author: "Jessica Khoury", genre: "Young Adult Fantasy", pages: 357,  read: false },
         { name: "An Island Wedding", author: "Jenny Colgan", genre: "Chick Lit", pages: 386, read: false },
@@ -55,7 +56,8 @@ As a user, I want the ability to...
   ]
 ```
     
-```const startCrafts = [
+```
+const startCrafts = [
     { name: "Create Your Own Succulent Hanger", materials: "Kit", stored: "In the top of my closet", time: "30 min to 1 hour" },
     { name: "Blanket for Ryleigh", materials: "top fabric, bottom fabric, blanket binding", stored: "the skinny part of my closet", time: "2 hours" }
     { name: "Coloring Book for Vivi", materials: "Book, pencils, eraser, black G2-10 pen", stored: "under my desk", time: "so much" }
