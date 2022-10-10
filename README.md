@@ -55,10 +55,10 @@ ____________________________
 EXAMPLE SEED DATA
 
 ```const startBooks = [
-        { name: "La Fille qui lisait dans le métro", genre: "French Literature", read: false },
-        { name: "The Mystwick School of Music Craftr", genre: "Young Adult Fantasy", read: false },
-        { name: "A Summer Wedding", genre: "Chick Lit", read: false },
-        { name: "Hocus Pocus 2", genre: "Fantasy", read: true },
+        { name: "La Fille qui lisait dans le métro", author: "Christine Féret-Fleury", genre: "French Literature", read: false },
+        { name: "The Mystwick School of Music Craft", author: "Jessica Khoury", genre: "Young Adult Fantasy", read: false },
+        { name: "An Island Wedding", author: "Jenny Colgan", genre: "Chick Lit", read: false },
+        { name: "Hocus Pocus 2", author: "FreeForm Books", genre: "Fantasy", read: true },
   ]
 ```
     
