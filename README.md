@@ -35,6 +35,7 @@ As a user, I want the ability to...
   - view all of my books in a list. 
   - read more details of individual books. 
   - delete my books. 
+  - make comments on my books.
   - favorite books that I read and loved. 
   - read a list of all of the books I have favorited. 
   - remove books from my favorites. 
@@ -43,6 +44,7 @@ As a user, I want the ability to...
   - view all of my crafts in a list. 
   - read more details of individual crafts. 
   - delete my crafts. 
+  - make comments on my crafts.
   - favorite crafts that I did and loved. 
   - read a list of all of the crafts I have favorited. 
   - remove crafts from my favorites. 
@@ -71,7 +73,7 @@ EXAMPLE SEED DATA
 ____________________________
 SCHEDULE
 
-Monday: Pitch idea and Seed db
+Monday: Pitch idea, Seed db, Get the back end going
 Tuesday: Testing with postman and make sure Back End is good to go
 Wednesday: Front End
 Thursday: Front End
