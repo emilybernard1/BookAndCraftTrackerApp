@@ -11,6 +11,7 @@ Technologies used:
 -Express
 -MongoDB
 -Liquidjs
+-Node
 -Nodemon
 -CSS
 -HTML
@@ -59,6 +60,9 @@ Back up idea:
 My bucketlist Travel and book tracker
 Overview:
 A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
+
+MVP:
+- An app that looks at least as good as the Fruit App we did in class, with a nav bar at the top, and div boxes that display the users resources and allows the user to edit and delete them as well as make comments.
 
 
 Wireframes:
