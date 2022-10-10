@@ -73,25 +73,32 @@ EXAMPLE SEED DATA
 ____________________________
 SCHEDULE
 
-Monday: Pitch idea, Seed db, Get the back end going
-Tuesday: Testing with postman and make sure Back End is good to go
-Wednesday: Front End
-Thursday: Front End
-Friday: Ask all questions I need answered before the weekend
-Saturday and Sunday: Polish all details
+-Monday: Pitch idea, Seed db, Get the back end going
+
+-Tuesday: Testing with postman and make sure Back End is good to go
+
+-Wednesday: Front End
+
+-Thursday: Front End
+
+-Friday: Ask all questions I need answered before the weekend
+
+-Saturday and Sunday: Polish all details
 
 
 ____________________________
 GOALS
 
-Primary: Make sure I really understand and build a solid foundation of how to build a back end
-Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+-Primary: Make sure I really understand and build a solid foundation of how to build a back end
+
+-Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
 
 
 ____________________________
 FUTURE VERSION POSIBILITIES
 
 -Make it so the user can decide anything they want to log/track
+
 -Could make it into more of an online BUJO
 
 
@@ -99,8 +106,10 @@ ____________________________
 BACK UP IDEA
 
 My bucketlist Travel and book tracker
+
 Overview:
-A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
+
+-A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
 
 
 ____________________________
