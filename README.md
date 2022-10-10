@@ -1,12 +1,17 @@
-ADHD Activity Tracker App
-
-Overview:
-If your ADHD brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
-
-With this app, you'll have a handy database of all of the books you want to read and crafts you want to do once bookcamp is over! 
+ADHD TRACKER APP
 
 
-Technologies used:
+____________________________
+OVERVIEW
+
+-If your ADHD brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
+
+-With this app, you'll have a handy database of all of the books you want to read and crafts you want to do once bookcamp is over! 
+
+
+____________________________
+TECHNOLOGIES USED
+
 -Mongoose
 -Express
 -MongoDB
@@ -17,7 +22,9 @@ Technologies used:
 -HTML
 
 
-User Stories:
+____________________________
+USER STORIES
+
 As a user, I want the ability to... 
   - sign up.
   - sign in. 
@@ -40,7 +47,11 @@ As a user, I want the ability to...
   - read a list of all of the crafts I have favorited. 
   - remove crafts from my favorites. 
 
-Example Seed Data:
+
+
+____________________________
+EXAMPLE SEED DATA
+
 ```const startBooks = [
         { name: "La Fille qui lisait dans le métro", genre: "French Literature", read: false },
         { name: "The Mystwick School of Music Craftr", genre: "Young Adult Fantasy", read: false },
@@ -55,34 +66,50 @@ Example Seed Data:
     { name: "Coloring Book for Vivi", materials: "Book, pencils, eraser, black G2-10 pen", stored: "under my desk", time: "so much" }
 ]
 ```
-    
+  
+  
+____________________________
+SCHEDULE
 
-Schedule:
-Momday: Pitch idea and Seed db
+Monday: Pitch idea and Seed db
 Tuesday: Testing with postman and make sure Back End is good to go
 Wednesday: Front End
 Thursday: Front End
 Friday: Ask all questions I need answered before the weekend
 Saturday and Sunday: Polish all details
 
-Goals:
+
+____________________________
+GOALS
+
 Primary: Make sure I really understand and build a solid foundation of how to build a back end
 Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
 
-Future Version Possibilities:
+
+____________________________
+FUTURE VERSION POSIBILITIES
+
 -Make it so the user can decide anything they want to log/track
 -Could make it into more of an online BUJO
 
-Back up idea:
+
+____________________________
+BACK UP IDEA
+
 My bucketlist Travel and book tracker
 Overview:
 A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
 
-MVP:
+
+____________________________
+MVP
+
 - An app that looks at least as good as the Fruit App we did in class, with a nav bar at the top, and div boxes that display the users resources and allows the user to edit and delete them as well as make comments.
 
 
-Wireframes:
+
+____________________________
+WIREFRAMES
 
 <img width="790" alt="WireFrame1ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731119-d74ba618-0487-4118-a050-38c7325b90d5.png">
 
@@ -92,7 +119,10 @@ Wireframes:
 
 <img width="792" alt="WireFrame4ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731132-3d0dcef6-6635-4742-b423-630812b18ee7.png">
 
+
+_____________________________
 ERDs 
+
 User and Books
 <img width="780" alt="ERDUsersAndBooks" src="https://user-images.githubusercontent.com/77028684/194770464-81c1ecbf-2119-4190-b187-693cf6c6dbdc.png">
 
