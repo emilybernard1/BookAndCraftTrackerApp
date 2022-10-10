@@ -11,8 +11,9 @@ const bcrypt = require('bcryptjs')
 const router = express.Router()
 
 
+/////////////////////////////////////////
 // Routes
-
+/////////////////////////////////////////
 // GET to render the signup form
 router.get('/signup', (req, res) => {
 	res.render('auth/signup')
@@ -95,5 +96,7 @@ router.get('/logout', (req, res) => {
 	})
 })
 
-// Export the Router
+/////////////////////////////////////////
+// Export Router
+/////////////////////////////////////////
 module.exports = router

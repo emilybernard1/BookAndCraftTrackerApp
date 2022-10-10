@@ -50,6 +50,18 @@ Thursday: Front End
 Friday: Ask all questions I need answered before the weekend
 Saturday and Sunday: Polish all details
 
+Goals:
+Primary: Make sure I really understand and build a solid foundation of how to build a back end
+Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+
+
 Wireframes:
 
+
+ERDs
+
+Users and Books
+
+
+Users and crafts
 
