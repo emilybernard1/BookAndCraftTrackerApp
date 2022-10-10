@@ -1,7 +1,7 @@
-ADHD TRACKER APP
+# ADHD TRACKER APP
 -----------------
 
-OVERVIEW
+## OVERVIEW
 -----------------
 -If your ADHD brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
 
@@ -9,20 +9,20 @@ OVERVIEW
 
 
 
-TECHNOLOGIES USED
+### TECHNOLOGIES USED
 ------------------
--Mongoose
--Express
--MongoDB
--Liquidjs
--Node
--Nodemon
--CSS
--HTML
+- Mongoose
+- Express
+- MongoDB
+- Liquidjs
+- Node
+- Nodemon
+- CSS
+- HTML
 
 
 
-USER STORIES
+### USER STORIES
 -----------------
 As a user, I want the ability to... 
   - sign up.
