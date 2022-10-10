@@ -11,6 +11,9 @@ Technologies used:
 -Express
 -MongoDB
 -Liquidjs
+-Nodemon
+-CSS
+-HTML
 
 
 User Stories:
@@ -36,12 +39,6 @@ As a user, I want the ability to...
   - read a list of all of the crafts I have favorited. 
   - remove crafts from my favorites. 
 
-Back up idea:
-My bucketlist Travel and book tracker
-Overview:
-A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
-
-
 Schedule:
 Momday: Pitch idea and Seed db
 Tuesday: Testing with postman and make sure Back End is good to go
@@ -53,6 +50,16 @@ Saturday and Sunday: Polish all details
 Goals:
 Primary: Make sure I really understand and build a solid foundation of how to build a back end
 Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
+
+Future Version Possibilities:
+-Make it so the user can decide anything they want to log/track
+-Could make it into more of an online BUJO
+
+Back up idea:
+My bucketlist Travel and book tracker
+Overview:
+A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
+
 
 Wireframes:
 
