@@ -1,24 +1,24 @@
-# ADHD TRACKER APP
+# CRAFT AND BOOK TRACKER APP
 -----------------
 
 ## OVERVIEW
 -----------------
--If your ADHD brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
+-If your brain is anything like mine, then you have doom boxes of crafts and piles of books around your house that you want to do and read. Yet, you don't always know where things are nor do you always remember whether you ever finished reading that book or putting together that craft. 
 
--With this app, you'll have a handy database of all of the books you want to read and crafts you want to do once bookcamp is over! 
+-With this app, you'll have a handy database of all of the books you want to read and crafts you want to do once bootcamp is over! 
 
 
 
 ### TECHNOLOGIES USED
 ------------------
-- Mongoose
-- Express
-- MongoDB
-- Liquidjs
-- Node
-- Nodemon
-- CSS
-- HTML
+  - Mongoose
+  - Express
+  - MongoDB
+  - Liquidjs
+  - Node
+  - Nodemon
+  - CSS
+  - HTML
 
 
 
@@ -31,33 +31,27 @@ As a user, I want the ability to...
   - sign out. 
   - log my books. 
   - update my books. 
-  - view all of my books in a list. 
+  - view all of my books in an index. 
   - read more details of individual books. 
   - delete my books. 
   - make comments on my books.
   - favorite books that I read and loved. 
-  - read a list of all of the books I have favorited. 
-  - remove books from my favorites. 
   - log my crafts. 
   - update my crafts. 
-  - view all of my crafts in a list. 
+  - view all of my crafts in an index. 
   - read more details of individual crafts. 
   - delete my crafts. 
   - make comments on my crafts.
-  - favorite crafts that I did and loved. 
-  - read a list of all of the crafts I have favorited. 
-  - remove crafts from my favorites. 
 
 
 
-
-EXAMPLE SEED DATA
+### EXAMPLE SEED DATA
 -------------------
 ```const startBooks = [
-        { name: "La Fille qui lisait dans le métro", author: "Christine Féret-Fleury", genre: "French Literature", read: false },
-        { name: "The Mystwick School of Music Craft", author: "Jessica Khoury", genre: "Young Adult Fantasy", read: false },
-        { name: "An Island Wedding", author: "Jenny Colgan", genre: "Chick Lit", read: false },
-        { name: "Hocus Pocus 2", author: "FreeForm Books", genre: "Fantasy", read: true },
+        { name: "La Fille qui lisait dans le métro", author: "Christine Féret-Fleury", genre: "French Literature", pages: 170, read: false },
+        { name: "The Mystwick School of Music Craft", author: "Jessica Khoury", genre: "Young Adult Fantasy", pages: 357,  read: false },
+        { name: "An Island Wedding", author: "Jenny Colgan", genre: "Chick Lit", pages: 386, read: false },
+        { name: "Hocus Pocus 2", author: "FreeForm Books", genre: "Fantasy", pages: 318, read: true },
   ]
 ```
     
@@ -70,7 +64,7 @@ EXAMPLE SEED DATA
   
   
 
-SCHEDULE
+### SCHEDULE
 ------------------
 -Monday: Pitch idea, Seed db, Get the back end going
 
@@ -86,40 +80,29 @@ SCHEDULE
 
 
 
-GOALS
+### GOALS
 ---------------
 -Primary: Make sure I really understand and build a solid foundation of how to build a back end
 
--Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. Add Favorites.
+-Stretch: Front End Design. I really want to try to dive deeper here this week, because it feels like my weak point. 
 
 
 
-FUTURE VERSION POSIBILITIES
+### FUTURE VERSION POSIBILITIES
 ----------------------------
 -Make it so the user can decide anything they want to log/track
 
 -Could make it into more of an online BUJO
 
 
-
-BACK UP IDEA
-----------------
-My bucketlist Travel and book tracker
-
-Overview:
-
--A tracker app that holds a bucket list of places that the user wants to visit and the books they would like to take with them. 
-
-
-
-MVP
+### MVP
 --------------
 - An app that looks at least as good as the Fruit App we did in class, with a nav bar at the top, and div boxes that display the users resources and allows the user to edit and delete them as well as make comments.
 
 
 
 
-WIREFRAMES
+### WIREFRAMES
 --------------
 <img width="790" alt="WireFrame1ADHDApp" src="https://user-images.githubusercontent.com/77028684/194731119-d74ba618-0487-4118-a050-38c7325b90d5.png">
 
@@ -131,11 +114,11 @@ WIREFRAMES
 
 
 
-ERDs 
+### ERDs 
 ---------------
-User and Books
+### User and Books
 <img width="780" alt="ERDUsersAndBooks" src="https://user-images.githubusercontent.com/77028684/194770464-81c1ecbf-2119-4190-b187-693cf6c6dbdc.png">
 
-User and Crafts
+### User and Crafts
 <img width="783" alt="ERDUsersAndCrafts" src="https://user-images.githubusercontent.com/77028684/194770472-f87f27a1-0976-4da3-9f38-404fd6e16c78.png">
 
