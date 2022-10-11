@@ -1,0 +1,62 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+
+    <div class="container-sm">
+        {%- comment -%} change the action {%- endcomment -%}
+        {%- comment -%} add values to input fields {%- endcomment -%}
+        {%- comment -%} add a back button {%- endcomment -%}
+        <form action="/crafts/{{craft.id}}?_method=PUT" method="POST">
+            <fieldset>
+                <legend>Edit {{craft.name}}</legend>
+                <label class="form-label">Name: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="name"
+                    placeholder="enter the name of the craft"
+                    value="{{ craft.name }}"
+                >
+                <label class="form-label">Materials: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="materials"
+                    placeholder="what materials do you need for this craft?"
+                    value="{{ craft.materials }}"
+                >
+                 <label class="form-label">In Hand?: </label>
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="inHand"
+                    placeholder="do you have the materials in hand?"
+                    {%- comment -%} value="{{ craft.inHand }}" {%- endcomment -%}
+                      {% if craft.inHand %}
+                        checked
+                    {% endif %}
+                >
+                  <label class="form-label">Stored: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="stored"
+                    placeholder="where are the materials stored?"
+                    value="{{ craft.stored }}"
+                >
+                <label class="form-label">Approximate Time to Complete: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="time"
+                    value="{{ craft.time }}"
+                >
+            </fieldset>
+            <input
+                class="btn btn-success"
+                type="submit"
+                value="Edit {{craft.name}}"
+            >
+        </form>
+    </div>
+
+{% endblock %}

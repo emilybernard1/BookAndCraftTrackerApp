@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-express-liquid-boilerplate",
+  "name": "BooksAndCraftsTracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",

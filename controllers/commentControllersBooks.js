@@ -2,8 +2,7 @@
 // Import Dependencies
 ////////////////////////////////////////
 const express = require("express")
-const Book = require("../models/book")
-const Craft =  require('../models/craft')
+const Book = require("../models/books")
 
 /////////////////////////////////////////
 // Create Router

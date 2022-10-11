@@ -1,7 +1,13 @@
-{% layout "layout.liquid" %}
+{% layout 'layout.liquid' %}
 {% block content %}
-
-    <h1>Welcome!</h1>
-
-
+    <div class="col-mb-4">
+        <h1 class="display-4">Welcome to the Craft and Book Tracker!</h1>
+        <p>This app is all about helping you remember where you stored your crafts and whether you've finished reading your library of books</p>
+        <img src="https://www.scandinaviastandard.com/wp-content/uploads/2019/04/Round-Library-Swedish-Grace-Stockholm-Public-Library-Stadtbibliothek-Stockholm-Scandinavia-Standard.jpg" alt="image of library" height="200px">
+        <img src="https://images.pexels.com/photos/159644/art-supplies-brushes-rulers-scissors-159644.jpeg?cs=srgb&dl=pexels-pixabay-159644.jpg&fm=jpg" alt="image of pencils" height="200px">
+    </div>
+    <div class="btn-group btn-group-lg mt-4">
+        <a href="/users/signup" class="btn btn-success">Sign Up</a>
+        <a href="/users/login" class="btn btn-success">Login</a>
+    </div>
 {% endblock %}

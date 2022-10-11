@@ -1,0 +1,61 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+
+    <div class="container-sm">
+        {%- comment -%} change the action {%- endcomment -%}
+        {%- comment -%} add values to input fields {%- endcomment -%}
+        {%- comment -%} add a back button {%- endcomment -%}
+        <form action="/books/{{book.id}}?_method=PUT" method="POST">
+            <fieldset>
+                <legend>Edit {{book.title}}</legend>
+                <label class="form-label">Title: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="title"
+                    placeholder="enter the name of the book"
+                    value="{{ book.title }}"
+                >
+                <label class="form-label">Author: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="genre"
+                    placeholder="who is the author of the book?"
+                    value="{{ book.author }}"
+                >
+                 <label class="form-label">Genre: </label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="genre"
+                    placeholder="what genre is the book?"
+                    value="{{ book.genre }}"
+                >
+                  <label class="form-label">Pages: </label>
+                <input
+                    class="form-control"
+                    type="number"
+                    name="pages"
+                    placeholder="how many pages does it have?"
+                    value="{{ book.pages }}"
+                >
+                <label class="form-label">Finished Reading: </label>
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="read"
+                    {% if book.read %}
+                        checked
+                    {% endif %}
+                >
+            </fieldset>
+            <input
+                class="btn btn-success"
+                type="submit"
+                value="Edit {{book.title}}"
+            >
+        </form>
+    </div>
+
+{% endblock %}
