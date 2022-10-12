@@ -28,7 +28,7 @@ const { Schema, model } = mongoose
 const bookSchema = new Schema({
 		title: { type: String, required: true },
 		author: { type: String, required: true },
-        genre: { type: Number, required: true },
+        genre: { type: String, required: true },
 		pages: { type: Number, required: true },
 		read: { type: Boolean, required: false },
 		owner: {

@@ -20,7 +20,7 @@ db.on('open', () => {
         { name: "Blanket for Ryleigh", materials: "top fabric, bottom fabric, blanket binding", inHand: true, stored: "the skinny part of my closet", time: "2 hours" },
         { name: "Coloring Book for Vivi", materials: "Book, pencils, eraser, black G2-10 pen", inHand: true, stored: "under my desk", time: "many months" },
         { name: "Blanket for Beth", materials: "top fabric, bottom fabric, blanket binding", inHand: true, stored: "hallway closet near girls rooms", time: "2 hours" },
-        { name: "Spell Jar for protection", materials: "jar, cork, crystals, wax, incense, candle", inHand: false, stored: "not yet", time: "30 minutes" }
+        { name: "Spell Jar for protection", materials: "jar, cork, crystals, wax, incense, candle", inHand: false, stored: "not yet", time: "30 minutes" },
         { name: "Design blanket with Beth", materials: "Spoonflower Fabric, blanket binding, thread", inHand: false, stored: "not yet", time: "2-4 hours" }
     ]
     // delete all the existing crafts

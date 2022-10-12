@@ -69,7 +69,7 @@ router.get('/new', (req, res) => {
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
 	req.body.read = req.body.read === 'on' ? true : false
-
+	
 	req.body.owner = req.session.userId
 	Book.create(req.body)
 		.then(books => {
