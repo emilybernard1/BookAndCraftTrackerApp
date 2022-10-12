@@ -35,6 +35,7 @@ router.use((req, res, next) => {
 // index ALL
 router.get('/', (req, res) => {
 	Book.find({})
+		.populate("comments.author", "username")
 		.then(books => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
@@ -49,9 +50,9 @@ router.get('/', (req, res) => {
 // index that shows only the user's books
 router.get('/mine', (req, res) => {
     // destructure user info from req.session
-    const { username, userId, loggedIn } = req.session
-	Book.find({ owner: userId })
+	Book.find({ owner: req.session.userId })
 		.then(books => {
+			const { username, userId, loggedIn } = req.session
 			res.render('books/index', { books, username, loggedIn, userId })
 		})
 		.catch(error => {
@@ -61,8 +62,8 @@ router.get('/mine', (req, res) => {
 
 // new route -> GET route that renders our page with the form
 router.get('/new', (req, res) => {
-	const { username, userId, loggedIn } = req.session
-	res.render('books/new', { username, loggedIn })
+	const { username, loggedIn, userId } = req.session
+	res.render('books/new', { username, loggedIn, userId })
 })
 
 // create -> POST route that actually calls the db and makes a new document
@@ -72,6 +73,9 @@ router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
 	Book.create(req.body)
 		.then(books => {
+			const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
 			// console.log('this was returned from create', book)
 			res.redirect('/books')
 		})
@@ -80,8 +84,9 @@ router.post('/', (req, res) => {
 		})
 })
 
+
 // edit route -> GET that takes us to the edit form view
-router.get('/editBooks/:id/', (req, res) => {
+router.get('/books/edit/:id/', (req, res) => {
 	const username = req.session.username
     const loggedIn = req.session.loggedIn
     const userId = req.session.userId
@@ -89,31 +94,42 @@ router.get('/editBooks/:id/', (req, res) => {
 	const bookId = req.params.id
 	Book.findById(bookId)
 		.then(book => {
-			res.render('books/editBooks', { book, username, loggedIn, userId })
+			res.render('books/edit', { book, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
 
-// update route
-router.put('/:id', (req, res) => {
-	const bookId = req.params.id
-	req.body.ready = req.body.ready === 'on' ? true : false
+// PUT request
+// update route -> updates a specific fruit
+router.put("/:id", (req, res) => {
+    console.log("req.body initially", req.body)
+    const id = req.params.id
 
-	Book.findByIdAndUpdate(bookId, req.body, { new: true })
-		.then(book => {
-			res.redirect(`/books/${book.id}`)
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
+    req.body.read = req.body.read === 'on' ? true : false
+    console.log('req.body after changing checkbox value', req.body)
+    Book.findById(id)
+        .then(book => {
+            if (book.owner == req.session.userId) {
+                // must return the results of this query
+                return book.updateOne(req.body)
+            } else {
+                res.sendStatus(401)
+            }
+        })
+        .then(() => {
+            // console.log('returned from update promise', data)
+            res.redirect(`/books/${id}`)
+        })
+        .catch(err => res.redirect(`/error?error=${err}`))
 })
 
 // show route
 router.get('/:id', (req, res) => {
 	const bookId = req.params.id
 	Book.findById(bookId)
+		.populate("comments.author", "username")
 		.then(book => {
             const {username, loggedIn, userId} = req.session
 			res.render('books/show', { book, username, loggedIn, userId })

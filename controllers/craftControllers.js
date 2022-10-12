@@ -34,6 +34,7 @@ router.use((req, res, next) => {
 // index ALL
 router.get('/', (req, res) => {
 	Craft.find({})
+        .populate("comments.author", "username")
 		.then(crafts => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
@@ -43,6 +44,12 @@ router.get('/', (req, res) => {
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
+})
+
+// new route -> GET route that renders our page with the form
+router.get('/new', (req, res) => {
+    const { username, userId, loggedIn } = req.session
+    res.render('crafts/new', { username, loggedIn })
 })
 
 // index that shows only the user's examples
@@ -58,19 +65,16 @@ router.get('/mine', (req, res) => {
 		})
 })
 
-// new route -> GET route that renders our page with the form
-router.get('/new', (req, res) => {
-	const { username, userId, loggedIn } = req.session
-	res.render('crafts/new', { username, loggedIn })
-})
-
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
-	req.body.ready = req.body.ready === 'on' ? true : false
+	req.body.inHand = req.body.inHand === 'on' ? true : false
 
 	req.body.owner = req.session.userId
 	Craft.create(req.body)
 		.then(crafts => {
+            const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
 			// console.log('this was returned from create', craft)
 			res.redirect('/crafts')
 		})
@@ -80,12 +84,12 @@ router.post('/', (req, res) => {
 })
 
 // edit route -> GET that takes us to the edit form view
-router.get('/editCrafts/:id', (req, res) => {
+router.get('/crafts/edit/:id', (req, res) => {
 	// we need to get the id
 	const craftId = req.params.id
 	Craft.findById(craftId)
 		.then(craft => {
-			res.render('crafts/editCrafts', { craft })
+			res.render('crafts/edit/', { craft, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -94,16 +98,24 @@ router.get('/editCrafts/:id', (req, res) => {
 
 // update route
 router.put('/:id', (req, res) => {
+    console.log("req.body initially", req.body)
 	const craftId = req.params.id
-	req.body.ready = req.body.ready === 'on' ? true : false
-
+	req.body.inHand = req.body.inHand === 'on' ? true : false
+    console.log('req.body after changing checkbox value', req.body)
 	Craft.findByIdAndUpdate(craftId, req.body, { new: true })
 		.then(craft => {
-			res.redirect(`/crafts/${craft.id}`)
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
+            if (craft.owner == req.session.userId) {
+                // must return the results of this query
+                return craft.updateOne(req.body)
+            } else {
+                res.sendStatus(401)
+            }
+        })
+        .then(() => {
+            // console.log('returned from update promise', data)
+            res.redirect(`/crafts/${id}`)
+        })
+        .catch(err => res.redirect(`/error?error=${err}`))
 })
 
 // show route

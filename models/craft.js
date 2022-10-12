@@ -13,6 +13,12 @@ const mongoose = require('./connection')
 const User = require('./user')
 
 ///////////////////////////////////////////////////////////
+// Import commentSchema
+//////////////////////////////////////////////////////////
+const commentSchema = require('./comment')
+
+
+///////////////////////////////////////////////////////////
 // Destructure the schema and model constructors from mongoose
 ///////////////////////////////////////////////////////////
 const { Schema, model } = mongoose
@@ -21,8 +27,7 @@ const { Schema, model } = mongoose
 ///////////////////////////////////////////////////////////
 // Our schema and model for the craft resource
 ///////////////////////////////////////////////////////////
-const craftSchema = new Schema(
-	{
+const craftSchema = new Schema({
 		name: { type: String, required: true },
 		materials: { type: String, required: true },
         inHand: { type: Boolean, required: false },
@@ -31,10 +36,9 @@ const craftSchema = new Schema(
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
-		}
-	},
-	{ timestamps: true }
-)
+		},
+		comments: [commentSchema]
+}, { timestamps: true })
 
 const Craft = model('Craft', craftSchema)
 

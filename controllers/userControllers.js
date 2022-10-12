@@ -26,6 +26,7 @@ router.post('/signup', async (req, res) => {
 		req.body.password,
 		await bcrypt.genSalt(10)
 	)
+	console.log('req.body after hash', req.body)
 	// create a new user
 	User.create(req.body)
 		// if created successfully redirect to login
@@ -70,8 +71,8 @@ router.post('/login', async (req, res) => {
           			const { username, loggedIn, userId } = req.session
 
 					// console.log('session user id', req.session.userId)
-					// redirect to /examples if login is successful
-					res.redirect('/')
+					// redirect to /books if login is successful
+					res.redirect('/books')
 				} else {
 					// send an error if the password doesnt match
 					res.redirect('/error?error=username%20or%20password%20incorrect')
