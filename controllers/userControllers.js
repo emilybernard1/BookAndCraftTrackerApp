@@ -47,7 +47,7 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
 	// console.log('request object', req)
 	// get the data from the request body
-	console.log('req.body', req.body);
+	// console.log('req.body', req.body);
 	
 	const { username, password } = req.body
 	// then we search for the user
@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
 				const result = await bcrypt.compare(password, user.password)
 
 				if (result) {
-					console.log('the user', user);
+					// console.log('the user', user);
 					
 					// store some properties in the session
 					req.session.username = user.username
@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
 
           			const { username, loggedIn, userId } = req.session
 
-					console.log('session user id', req.session.userId)
+					// console.log('session user id', req.session.userId)
 					// redirect to /examples if login is successful
 					res.redirect('/')
 				} else {
@@ -83,11 +83,12 @@ router.post('/login', async (req, res) => {
 		})
 		// catch any other errors that occur
 		.catch((error) => {
-			console.log('the error', error);
+			// console.log('the error', error);
 			
 			res.redirect(`/error?error=${error}`)
 		})
 })
+
 
 // logout route -> destroy the session
 router.get('/logout', (req, res) => {

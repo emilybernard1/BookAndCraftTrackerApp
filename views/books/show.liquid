@@ -1,0 +1,58 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-md">
+    <article>
+        <h2>
+            {{ book.title }} -
+            {% if book.read %}
+            Read
+            {% else %}
+            Not Read
+            {%endif%}
+        </h2>
+        <h3>Author: {{ book.author }}</h3>
+        <h6>Genre: {{ book.genre }}</h6>
+        <h6>Pages: {{ book.page }}</h6>
+        {% if book.owner == userId %}
+        <div class="btn-group">
+
+            <a href="/books/edit/{{ book.id }}" class="btn btn-primary">Edit</a>
+            <form action="/books/{{ book.id }}?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+        </div>
+        {% endif %}
+    </article>
+</div>
+    <hr>
+    <h4>comments</h4>
+    <hr>
+    {% if loggedIn %}
+        <div class="col-md-6">
+            <form action="/comments/{{books.id}}" method="POST">
+                <fieldset>
+                    <legend>Add Comment</legend>
+                    <label class="form-label">comment:</label>
+                    <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="note" required>
+                </fieldset>
+                <input class="btn btn-success" type="submit" value="add comment">
+            </form>
+        </div>
+    {% else %}
+        <div class="col-md-6">
+            <small>If you'd like to leave a comment, please log in...</small>
+        </div>
+    {% endif %}
+    <hr>
+    {% if books.comments.length > 0%}
+        <div class="container-sm justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                {% for comment in book.comments %}
+                    {% render '../comment.liquid', comment: comment, userId: userId, book: book %}
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <small>no comments yet...</small>
+    {% endif %}
+{% endblock %}

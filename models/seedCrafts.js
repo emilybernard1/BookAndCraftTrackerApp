@@ -2,7 +2,7 @@
 // Import Dependencies
 ///////////////////////////////////////
 const mongoose = require('./connection')
-const Craft =  require('../models/craftModel')
+const Craft =  require('./craft')
 
 ///////////////////////////////////////
 // Seed Script code

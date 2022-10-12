@@ -1,0 +1,30 @@
+{% layout 'layout.liquid'%}
+{% block content %}
+<div>
+    <h2 class="display-6">All Crafts</h2>
+    <div class="row">
+        {% for craft in crafts %}
+        <div class="card" style="width: 18rem;">
+            <h5 class="card-header">{{ craft.name }}</h5>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Materials: {{ craft.materials }}
+                </h5>
+                <p class="card-text">
+                    In Hand?: {{ craft.inHand }}
+                </p>
+                <p class="card-text">
+                    Stored: {{ craft.stored }}
+                </p>
+                 <p class="card-text">
+                    Approximate Time to Complete: {{ craft.time }}
+                </p>
+                <a href="/crafts/{{ craft.id }}" class="btn btn-info">
+                    View {{ craft.name }}
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

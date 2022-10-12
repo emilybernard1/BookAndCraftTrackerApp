@@ -2,7 +2,7 @@
 // Import Dependencies
 ////////////////////////////////////////
 const express = require('express')
-const Book = require('../models/bookModel')
+const Book = require('../models/book')
 
 
 /////////////////////////////////////////
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
 	Book.create(req.body)
 		.then(books => {
-			console.log('this was returned from create', book)
+			// console.log('this was returned from create', book)
 			res.redirect('/books')
 		})
 		.catch(error => {
@@ -81,7 +81,7 @@ router.post('/', (req, res) => {
 })
 
 // edit route -> GET that takes us to the edit form view
-router.get('/:id/edit', (req, res) => {
+router.get('/editBooks/:id/', (req, res) => {
 	const username = req.session.username
     const loggedIn = req.session.loggedIn
     const userId = req.session.userId
@@ -89,7 +89,7 @@ router.get('/:id/edit', (req, res) => {
 	const bookId = req.params.id
 	Book.findById(bookId)
 		.then(book => {
-			res.render('books/edit', { book, username, loggedIn, userId })
+			res.render('books/editBooks', { book, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)

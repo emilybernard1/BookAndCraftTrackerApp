@@ -2,7 +2,7 @@
 // Import Dependencies
 ////////////////////////////////////////
 const express = require("express")
-const Craft =  require('../models/craftModel')
+const Craft =  require('../models/craft')
 
 /////////////////////////////////////////
 // Create Router
@@ -53,7 +53,7 @@ router.delete('/delete/:craftId/:commId', (req, res) => {
         .then(craft => {
             // get the comment
             const theComment = craft.comments.id(commId)
-            console.log('this is the comment that was found', theComment)
+            // console.log('this is the comment that was found', theComment)
             // make sure the user is logged in
             if (req.session.loggedIn) {
                 // only let the author of the comment delete it
@@ -127,7 +127,7 @@ router.delete('/delete/:craftId/:commId', (req, res) => {
                 if (theComment.author == req.session.userId) {
                     theComment.remove()
                     craft.save()
-                    res.redirect(`/craft/${craft.id}`)
+                    res.redirect(`/crafts/${craft.id}`)
                     // return the saved craft
                     // return craft.save()
                 } else {

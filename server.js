@@ -7,6 +7,8 @@ const middleware = require('./utils/middleware')
 const BookRouter = require('./controllers/bookControllers')
 const CraftRouter =  require('./controllers/craftControllers')
 const UserRouter = require('./controllers/userControllers')
+const CommentRouterBooks = require('./controllers/commentControllersBooks')
+const CommentRouterCrafts = require('./controllers/commentControllersCrafts')
 const User = require("./models/user")
 // SEE MORE DEPENDENCIES IN ./utils/middleware.js
 // user and resource routes linked in ./utils/middleware.js
@@ -23,6 +25,11 @@ middleware(app)
 ////////////////////
 
 app.use('/auth', UserRouter)
+app.use('/books', BookRouter)
+app.use('/crafts', CraftRouter)
+app.use('/controllers/commentControllersBooks', CommentRouterBooks)
+app.use('/controllers/commentControllersCrafts', CommentRouterCrafts)
+app.use('/users', UserRouter)
 
 
 app.get('/', (req, res) => {
@@ -49,3 +56,5 @@ app.all('*', (req, res) => {
 app.listen(process.env.PORT, () => {
     console.log(`listening on port ${process.env.PORT}`)
 })
+
+// END

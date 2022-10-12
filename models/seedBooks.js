@@ -2,7 +2,7 @@
 // Import Dependencies
 ///////////////////////////////////////
 const mongoose = require('./connection')
-const Book = require('./bookModel')
+const Book = require('./book')
 
 ///////////////////////////////////////
 // Seed Script code

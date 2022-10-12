@@ -2,7 +2,7 @@
 // Import Dependencies
 ////////////////////////////////////////
 const express = require('express')
-const Craft =  require('../models/craftModel')
+const Craft =  require('../models/craft')
 
 /////////////////////////////////////////
 // Create Router
@@ -37,8 +37,8 @@ router.get('/', (req, res) => {
 		.then(crafts => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
-			
-			res.render('crafts/index', { crafts, username, loggedIn })
+			const userId = req.session.userId
+			res.render('crafts/index', { crafts, username, loggedIn, userId })
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
@@ -70,8 +70,8 @@ router.post('/', (req, res) => {
 
 	req.body.owner = req.session.userId
 	Craft.create(req.body)
-		.then(craft => {
-			console.log('this was returned from create', craft)
+		.then(crafts => {
+			// console.log('this was returned from create', craft)
 			res.redirect('/crafts')
 		})
 		.catch(error => {
@@ -80,12 +80,12 @@ router.post('/', (req, res) => {
 })
 
 // edit route -> GET that takes us to the edit form view
-router.get('/:id/edit', (req, res) => {
+router.get('/editCrafts/:id', (req, res) => {
 	// we need to get the id
 	const craftId = req.params.id
 	Craft.findById(craftId)
 		.then(craft => {
-			res.render('crafts/edit', { craft })
+			res.render('crafts/editCrafts', { craft })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
@@ -110,6 +110,7 @@ router.put('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
 	const craftId = req.params.id
 	Craft.findById(craftId)
+        .populate("comments.author", "username")
 		.then(craft => {
             const {username, loggedIn, userId} = req.session
 			res.render('crafts/show', { craft, username, loggedIn, userId })
