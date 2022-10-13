@@ -18,7 +18,8 @@
   - Node
   - Nodemon
   - CSS
-  - HTML
+  - HTML5
+  - Bootstrap
 
 
 

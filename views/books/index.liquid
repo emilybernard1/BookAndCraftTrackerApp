@@ -5,11 +5,12 @@
     <div class="row">
         {% for book in books %}
         <div class="card" style="width: 18rem;">
-            <h5 class="card-header">{{ book.title }}</h5>
+            <h4 class="card-header">{{ book.title }}</h4>
             <div class="card-body">
-                <h5 class="card-title">
+                <h7 class="card-title">
                     Author: {{ book.author }}
-                </h5>
+                </h7>
+                <br>
                 <p class="card-text">
                     Genre: {{ book.genre }}
                 </p>

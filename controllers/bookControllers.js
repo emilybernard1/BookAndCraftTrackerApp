@@ -86,7 +86,7 @@ router.post('/', (req, res) => {
 
 
 // edit route -> GET that takes us to the edit form view
-router.get('/books/edit/:id/', (req, res) => {
+router.get('/:id/edit', (req, res) => {
 	const username = req.session.username
     const loggedIn = req.session.loggedIn
     const userId = req.session.userId
@@ -102,7 +102,7 @@ router.get('/books/edit/:id/', (req, res) => {
 })
 
 // PUT request
-// update route -> updates a specific fruit
+// update route -> updates a specific book
 router.put("/:id", (req, res) => {
     console.log("req.body initially", req.body)
     const id = req.params.id

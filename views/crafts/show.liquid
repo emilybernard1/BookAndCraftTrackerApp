@@ -3,29 +3,28 @@
 <div class="container-md">
     <article>
         <h2>
-            {{ craft.name }} -
+            {{ craft.name }} 
+        </h2>
+        <h4>Materials: {{ craft.materials }}</h4>
+        <h6>Stored: {{ craft.stored }}</h6>
+        <h6>Approximate Time to Complete: {{ craft.time }}</h6>
+            -
             {% if craft.inHand %}
             All materials are in hand and ready to go!
             {% else %}
             Need to collect some materials still...
             {%endif%}
-        </h2>
-        <h3>Materials: {{ craft.materials }}</h3>
-        <h6>Stored: {{ craft.stored }}</h6>
-        <h6>Approximate Time to Complete: {{ craft.time }}</h6>
         {% if craft.owner == userId %}
+        <br>
         <div class="btn-group">
-
-            <a href="/crafts/edit/{{ craft.id }}" class="btn btn-primary">Edit</a>
-            <form action="/crafts/{{ craft.id }}?_method=DELETE" method="POST">
+            <a class="btn btn-primary" href="/crafts/{{craft.id}}/edit">Edit</a>
+            <form action="/crafts/{{craft.id}}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete" class="btn btn-danger">
             </form>
         </div>
         {% endif %}
     </article>
 </div>
-    <hr>
-    <h4>comments</h4>
     <hr>
     {% if loggedIn %}
         <div class="col-md-6">
@@ -35,6 +34,7 @@
                     <label class="form-label">comment:</label>
                     <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="note" required>
                 </fieldset>
+                <br>
                 <input class="btn btn-success" type="submit" value="add comment">
             </form>
         </div>
@@ -53,6 +53,7 @@
             </div>
         </div>
     {% else %}
+    <h4>comments</h4>
         <small>no comments yet...</small>
     {% endif %}
 {% endblock %}

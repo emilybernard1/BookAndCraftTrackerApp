@@ -84,26 +84,32 @@ router.post('/', (req, res) => {
 })
 
 // edit route -> GET that takes us to the edit form view
-router.get('/crafts/edit/:id', (req, res) => {
+router.get('/:id/edit', (req, res) => {
 	// we need to get the id
+    const username = req.session.username
+    const loggedIn = req.session.loggedIn
+    const userId = req.session.userId
 	const craftId = req.params.id
 	Craft.findById(craftId)
 		.then(craft => {
-			res.render('crafts/edit/', { craft, username, loggedIn, userId })
+			res.render('crafts/edit', { craft, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
+            // console.log(error)
 		})
 })
 
-// update route
-router.put('/:id', (req, res) => {
+// PUT request
+// update route -> updates a specific craft
+router.put("/:id", (req, res) => {
     console.log("req.body initially", req.body)
-	const craftId = req.params.id
-	req.body.inHand = req.body.inHand === 'on' ? true : false
+    const id = req.params.id
+
+    req.body.inHand = req.body.inHand === 'on' ? true : false
     console.log('req.body after changing checkbox value', req.body)
-	Craft.findByIdAndUpdate(craftId, req.body, { new: true })
-		.then(craft => {
+    Craft.findById(id)
+        .then(craft => {
             if (craft.owner == req.session.userId) {
                 // must return the results of this query
                 return craft.updateOne(req.body)

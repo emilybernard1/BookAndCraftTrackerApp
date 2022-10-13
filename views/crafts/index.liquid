@@ -5,11 +5,12 @@
     <div class="row">
         {% for craft in crafts %}
         <div class="card" style="width: 18rem;">
-            <h5 class="card-header">{{ craft.name }}</h5>
+            <h4 class="card-header">{{ craft.name }}</h4>
             <div class="card-body">
-                <h5 class="card-title">
+                <h7 class="card-title">
                     Materials: {{ craft.materials }}
-                </h5>
+                </h7>
+                <br>
                 <p class="card-text">
                     In Hand?: {{ craft.inHand }}
                 </p>
