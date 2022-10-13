@@ -1,68 +1,67 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="showBook">
-    <div class="container-md">
-        <article>
-            <br>
-            <h2>
-                {{ book.title }} 
-            </h2>
-            <br>
-            <h6>Author: {{ book.author }}</h6>
-            <h6>Genre: {{ book.genre }}</h6>
-            <h6>Pages: {{ book.pages}}</h6>
-            <h6>-
-                {% if book.read %}
-                Read
-                {% else %}
-                Not Read
-                {%endif%}
-            </h6>
-            {% if book.owner == userId %}
-            <br>
-            <div class="btn-group">
-                <a class="btn btn-primary" href="/books/{{book.id}}/edit">Edit</a>
-                <form action="/books/{{ book.id }}?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete" class="btn btn-danger">
-                </form>
-            </div>
-            {% endif %}
-        </article>
-    </div>
-        <hr> 
-        <div class="commentsDiv">
-            {% if loggedIn %}
-                <div class="col-md-6">
-                    <form action="/comments/{{book.id}}" method="POST">
-                        <fieldset>
-                            <legend>Add Comment</legend>
-                            <label class="form-label">comment:</label>
-                            <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="note" required>
-                        </fieldset>
-                        <br>
-                        <input class="btn btn-success" type="submit" value="add comment">
-                    </form>
-                </div>
-            {% else %}
-                <div class="col-md-6">
-                    <small>If you'd like to leave a comment, please log in...</small>
-                </div>
-            {% endif %}
-            <hr>
-            <h4>Comments</h4>
-            {% if books.comments.length > 0%}
-                <div class="container-sm justify-content-center">
-                    <div class="col-md-8 col-lg-6">
-                        {% for comment in book.comments %}
-                            {% render '../comment.liquid', comment: comment, userId: userId, book: book %}
-                        {% endfor %}
+    <div class="showBook">
+        <div class="container-md">
+            <article>
+                <br>
+                <h2>
+                    {{ book.title }} 
+                </h2>
+                <br>
+                <h6>Author: {{ book.author }}</h6>
+                <h6>Genre: {{ book.genre }}</h6>
+                <h6>Pages: {{ book.pages}}</h6>
+                <h6>-
+                    {% if book.read %}
+                    Read
+                    {% else %}
+                    Not Read
+                    {%endif%}
+                </h6>
+                <br>
+                {% if book.owner == userId %}
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="/books/edit/{{book.id}}">Edit</a>
+                        <form action="/books/{{ book.id }}?_method=DELETE" method="POST">
+                            <input class="btn btn-danger" type="submit" value="Delete" >
+                        </form>
                     </div>
-                </div>
-            {% else %}
-                <small>no comments yet...</small>
-            {% endif %}
-            <br>
-            <br>
+                {% endif %}
+            </article>
+            <hr> 
+            <div class="commentsDiv">
+                {% if loggedIn %}
+                    <div class="col-md-6">
+                        <form action="/commentBooks/{{book.id}}" method="POST">
+                            <fieldset>
+                                <legend>Add Comment</legend>
+                                <label class="form-label">comment:</label>
+                                <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="note" required>
+                            </fieldset>
+                            <input class="btn btn-success" type="submit" value="add comment">
+                        </form>
+                    </div>
+                {% else %}
+                    <div class="col-md-6">
+                        <small>If you'd like to leave a comment, please log in...</small>
+                    </div>
+                {% endif %}
+                <hr>
+                {% if book.comments.length > 0%}
+                    <div class="container-sm justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            {% for comment in book.comments %}
+                                {% render '../commentBooks.liquid', comment: comment, userId: userId, book: book %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <h4>Comments</h4>
+                    <small>no comments yet...</small>
+                {% endif %}
+                <br>
+                <br>
+            </div>
         </div>
-</div>
+    </div>
 {% endblock %}

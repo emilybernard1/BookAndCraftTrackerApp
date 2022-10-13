@@ -14,19 +14,16 @@ const router = express.Router()
 ////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
-router.post("/:bookId", (req, res) => {
+router.post("/commentBooks/:bookId", (req, res) => {
     const bookId = req.params.bookId
 
     if (req.session.loggedIn) {
-        // we want to adjust req.body so that the author is automatically assigned
         req.body.author = req.session.userId
     } else {
         res.sendStatus(401)
     }
     // find a specific book
     Book.findById(bookId)
-        // do something if it works
-        //  --> send a success response status and maybe the comment? maybe the book?
         .then(book => {
             // push the comment into the book.comments array
             book.comments.push(req.body)
@@ -37,8 +34,6 @@ router.post("/:bookId", (req, res) => {
             // res.status(200).json({ book: book })
             res.redirect(`/books/${book.id}`)
         })
-        // do something else if it doesn't work
-        //  --> send some kind of error depending on what went wrong
         .catch(err => res.redirect(`/error?error=${err}`))
 })
 
@@ -60,8 +55,6 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
             if (req.session.loggedIn) {
                 // only let the author of the comment delete it
                 if (theComment.author == req.session.userId) {
-                    // find some way to remove the comment
-                    // here's another built in method
                     theComment.remove()
                     book.save()
                     res.redirect(`/books/${book.id}`)

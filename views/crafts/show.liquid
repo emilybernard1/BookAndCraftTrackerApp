@@ -1,67 +1,68 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="showCraft">
-    <div class="container-md">
-        <article>
-            <br>
-            <h2>
-                {{ craft.name }} 
-            </h2>
-            <h4>Materials: {{ craft.materials }}</h4>
-            <h6>Stored: {{ craft.stored }}</h6>
-            <h6>Approximate Time to Complete: {{ craft.time }}</h6>
-                -
-                {% if craft.inHand %}
-                All materials are in hand and ready to go!
-                {% else %}
-                Need to collect some materials still...
-                {%endif%}
-            {% if craft.owner == userId %}
-            <br>
-            <br>
-            <div class="btn-group">
-                <a class="btn btn-primary" href="/crafts/{{craft.id}}/edit">Edit</a>
-                <form action="/crafts/{{craft.id}}?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete" class="btn btn-danger">
-                </form>
-            </div>
-            {% endif %}
-        </article>
-    </div>
-        <hr>
-        <div class="commentsDiv">
-            {% if loggedIn %}
-                <div class="col-md-6">
-                    <form action="/comments/{{crafts.id}}" method="POST">
-                        <fieldset>
-                            <legend>Add Comment</legend>
-                            <label class="form-label">comment:</label>
-                            <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="note" required>
-                        </fieldset>
-                        <br>
-                        <input class="btn btn-success" type="submit" value="add comment">
-                    </form>
-                </div>
-            {% else %}
-                <div class="col-md-6">
-                    <small>If you'd like to leave a comment, please log in...</small>
-                </div>
-            {% endif %}
-            <hr>
-            {% if craft.comments.length > 0%}
-                <div class="container-sm justify-content-center">
-                    <div class="col-md-8 col-lg-6">
-                        {% for comment in craft.comments %}
-                            {% render '../comment.liquid', comment: comment, userId: userId, craft: craft %}
-                        {% endfor %}
+    <div class="showCraft">
+        <div class="container-md">
+            <article>
+                <br>
+                <h2>
+                    {{ craft.name }} 
+                </h2>
+                <h4>Materials: {{ craft.materials }}</h4>
+                <h6>Stored: {{ craft.stored }}</h6>
+                <h6>Approximate Time to Complete: {{ craft.time }}</h6>
+                <h6>-
+                    {% if craft.inHand %}
+                    All materials are in hand and ready to go!
+                    {% else %}
+                    Need to collect some materials still...
+                    {%endif%}
+                </h6>
+                <br>
+                <br>
+                {% if craft.owner == userId %}
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="/crafts/edit/{{craft.id}}">Edit</a>
+                        <form action="/crafts/{{craft.id}}?_method=DELETE" method="POST">
+                            <input class="btn btn-danger" type="submit" value="Delete" >
+                        </form>
                     </div>
-                </div>
-            {% else %}
-            <h4>comments</h4>
-                <small>no comments yet...</small>
-            {% endif %}
-            <br>
-            <br>
+                {% endif %}
+            </article>
+            <hr>
+            <div class="commentsDiv">
+                {% if loggedIn %}
+                    <div class="col-md-6">
+                        <form action="/commentCrafts/{{craft.id}}" method="POST">
+                            <fieldset>
+                                <legend>Add Comment</legend>
+                                <label class="form-label">comment:</label>
+                                <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="note" required>
+                            </fieldset>
+                            <br>
+                            <input class="btn btn-success" type="submit" value="add comment">
+                        </form>
+                    </div>
+                {% else %}
+                    <div class="col-md-6">
+                        <small>If you'd like to leave a comment, please log in...</small>
+                    </div>
+                {% endif %}
+                <hr>
+                {% if craft.comments.length > 0%}
+                    <div class="container-sm justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            {% for comment in craft.comments %}
+                                {% render '../commentCrafts.liquid', comment: comment, userId: userId, craft: craft %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <h4>Comments</h4>
+                    <small>no comments yet...</small>
+                {% endif %}
+                <br>
+                <br>
+            </div>
         </div>
-</div>
+    </div>
 {% endblock %}

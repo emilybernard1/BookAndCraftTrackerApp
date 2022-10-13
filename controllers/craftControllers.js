@@ -52,17 +52,21 @@ router.get('/new', (req, res) => {
     res.render('crafts/new', { username, loggedIn })
 })
 
-// index that shows only the user's examples
+// index that shows only the user's crafts
 router.get('/mine', (req, res) => {
-    // destructure user info from req.session
-    const { username, userId, loggedIn } = req.session
-	Craft.find({ owner: userId })
-		.then(crafts => {
-			res.render('crafts/index', { crafts, username, loggedIn })
-		})
-		.catch(error => {
-			res.redirect(`/error?error=${error}`)
-		})
+    // find the crafts, by ownership
+    Craft.find({ owner: req.session.userId })
+    // then display the crafts
+        .then(crafts => {
+            const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
+
+            // res.status(200).json({ crafts: crafts })
+            res.render('crafts/index', { crafts, username, loggedIn, userId })
+        })
+    // or throw an error if there is one
+        .catch(err => res.redirect(`/error?error=${err}`))
 })
 
 // create -> POST route that actually calls the db and makes a new document
@@ -70,6 +74,7 @@ router.post('/', (req, res) => {
 	req.body.inHand = req.body.inHand === 'on' ? true : false
 
 	req.body.owner = req.session.userId
+	console.log('the craft from the form', req.body)
 	Craft.create(req.body)
 		.then(crafts => {
             const username = req.session.username
@@ -84,7 +89,7 @@ router.post('/', (req, res) => {
 })
 
 // edit route -> GET that takes us to the edit form view
-router.get('/:id/edit', (req, res) => {
+router.get('/edit/:id', (req, res) => {
 	// we need to get the id
     const username = req.session.username
     const loggedIn = req.session.loggedIn
@@ -96,7 +101,6 @@ router.get('/:id/edit', (req, res) => {
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
-            // console.log(error)
 		})
 })
 
@@ -126,16 +130,16 @@ router.put("/:id", (req, res) => {
 
 // show route
 router.get('/:id', (req, res) => {
-	const craftId = req.params.id
-	Craft.findById(craftId)
-        .populate("comments.author", "username")
+	const id = req.params.id
+	Craft.findById(id)
+		.populate("comments.author", "username")
 		.then(craft => {
-            const {username, loggedIn, userId} = req.session
-			res.render('crafts/show', { craft, username, loggedIn, userId })
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
+            const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
+            // res.json({ craft: craft })
+            res.render('crafts/show', { craft, username, loggedIn, userId })
+        })
 })
 
 // delete route

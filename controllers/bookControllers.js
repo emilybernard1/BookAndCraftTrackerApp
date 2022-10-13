@@ -49,15 +49,19 @@ router.get('/', (req, res) => {
 
 // index that shows only the user's books
 router.get('/mine', (req, res) => {
-    // destructure user info from req.session
-	Book.find({ owner: req.session.userId })
-		.then(books => {
-			const { username, userId, loggedIn } = req.session
-			res.render('books/index', { books, username, loggedIn, userId })
-		})
-		.catch(error => {
-			res.redirect(`/error?error=${error}`)
-		})
+    // find the books, by ownership
+    Book.find({ owner: req.session.userId })
+    // then display the fruits
+        .then(books => {
+            const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
+
+            // res.status(200).json({ fruits: fruits })
+            res.render('books/index', { books, username, loggedIn, userId })
+        })
+    // or throw an error if there is one
+        .catch(err => res.redirect(`/error?error=${err}`))
 })
 
 // new route -> GET route that renders our page with the form
@@ -71,6 +75,7 @@ router.post('/', (req, res) => {
 	req.body.read = req.body.read === 'on' ? true : false
 	
 	req.body.owner = req.session.userId
+	console.log('the book from the form', req.body)
 	Book.create(req.body)
 		.then(books => {
 			const username = req.session.username
@@ -86,7 +91,7 @@ router.post('/', (req, res) => {
 
 
 // edit route -> GET that takes us to the edit form view
-router.get('/:id/edit', (req, res) => {
+router.get('edit/:id/', (req, res) => {
 	const username = req.session.username
     const loggedIn = req.session.loggedIn
     const userId = req.session.userId
@@ -127,16 +132,16 @@ router.put("/:id", (req, res) => {
 
 // show route
 router.get('/:id', (req, res) => {
-	const bookId = req.params.id
-	Book.findById(bookId)
+	const id = req.params.id
+	Book.findById(id)
 		.populate("comments.author", "username")
 		.then(book => {
-            const {username, loggedIn, userId} = req.session
-			res.render('books/show', { book, username, loggedIn, userId })
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
+            const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
+            // res.json({ book: book })
+            res.render('books/show', { book, username, loggedIn, userId })
+        })
 })
 
 // delete route

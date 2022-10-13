@@ -46,10 +46,6 @@ router.get('/login', (req, res) => {
 })
 // post to send the login info(and create a session)
 router.post('/login', async (req, res) => {
-	// console.log('request object', req)
-	// get the data from the request body
-	// console.log('req.body', req.body);
-	
 	const { username, password } = req.body
 	// then we search for the user
 	User.findOne({ username: username })
@@ -57,20 +53,15 @@ router.post('/login', async (req, res) => {
 			// check if the user exists
 			if (user) {
 				// compare the password
-				// bcrypt.compare evaluates to a truthy or a falsy value
 				const result = await bcrypt.compare(password, user.password)
 
 				if (result) {
-					// console.log('the user', user);
-					
 					// store some properties in the session
 					req.session.username = user.username
 					req.session.loggedIn = true
 					req.session.userId = user.id
 
           			const { username, loggedIn, userId } = req.session
-
-					// console.log('session user id', req.session.userId)
 					// redirect to /books if login is successful
 					res.redirect('/books')
 				} else {
