@@ -55,7 +55,7 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
             // subdocs have a built in method that you can use to access specific subdocuments when you need to.
             // this built in method is called .id()
             const theComment = book.comments.id(commId)
-            // console.log('this is the comment that was found', theComment)
+            console.log('this is the comment that was found', theComment)
             // make sure the user is logged in
             if (req.session.loggedIn) {
                 // only let the author of the comment delete it

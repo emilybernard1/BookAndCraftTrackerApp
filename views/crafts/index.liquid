@@ -1,7 +1,8 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">All Crafts</h2>
+    <br>
+    <h3 class="display-6">All Crafts</h3>
     <div class="row">
         {% for craft in crafts %}
         <div class="card" style="width: 18rem;">
@@ -11,8 +12,9 @@
                     Materials: {{ craft.materials }}
                 </h7>
                 <br>
+                <br>
                 <p class="card-text">
-                    In Hand?: {{ craft.inHand }}
+                    In Hand: {{ craft.inHand }}
                 </p>
                 <p class="card-text">
                     Stored: {{ craft.stored }}

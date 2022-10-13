@@ -16,7 +16,26 @@ body {
     background-color: blueviolet;
 }
 
-.card-text, .card-header, .btn {
+.card-text, .card-header, .btn, .card-title {
     font-family: Optima, Arial, sans-serif;
 }
 
+.container-sm {
+    background-color: lavender;
+}
+
+/* .container-md {
+    background-color: lavender;
+} */
+
+.background {
+    background-color: none;
+}
+
+.showBook, .showCraft{
+    background-color: lavender;
+}
+
+.commentsDiv {
+    margin-left: 10px;
+}

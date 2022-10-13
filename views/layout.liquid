@@ -22,17 +22,17 @@
         </header> {%- endcomment -%}
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/books">BOOKS</a>
-                <a class="navbar-brand" href="/crafts">CRAFTS</a>
+                {%- comment -%} <a class="navbar-brand" href="/books">BOOKS</a>
+                <a class="navbar-brand" href="/crafts">CRAFTS</a> {%- endcomment -%}
                 {% if loggedIn %}
-                    <a class="nav-link text-light" href="/books/mine">Hello {{username}}</a>
+                    <a class="nav-link text-light" href="/books/mine"><h3>HELLO {{username}}</h3></a>
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <a class="nav-link text-light" href="/books">All the books</a>
-                    <a class="nav-link text-light" href="/crafts">All the crafts</a>
+                    <a class="nav-link text-light" href="/books">BOOKS</a>
+                    <a class="nav-link text-light" href="/crafts">CRAFTS</a>
                     {% if loggedIn %}
                         <a class="nav-link text-light" href="/books/new">New Book</a>
                          <a class="nav-link text-light" href="/crafts/new">New Craft</a>

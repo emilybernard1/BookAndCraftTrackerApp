@@ -1,7 +1,8 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div>
-    <h2 class="display-6">All Books</h2>
+<div class="background">
+    <br>
+    <h3 class="display-6">All Books</h3>
     <div class="row">
         {% for book in books %}
         <div class="card" style="width: 18rem;">
@@ -11,6 +12,7 @@
                     Author: {{ book.author }}
                 </h7>
                 <br>
+                <br>
                 <p class="card-text">
                     Genre: {{ book.genre }}
                 </p>
@@ -18,7 +20,7 @@
                     Pages: {{ book.pages }}
                 </p>
                  <p class="card-text">
-                    Read?: {{ book.read }}
+                    Read: {{ book.read }}
                 </p>
                 <a href="/books/{{ book.id }}" class="btn btn-info">
                     View {{ book.title }}

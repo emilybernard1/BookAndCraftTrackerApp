@@ -53,7 +53,7 @@ router.delete('/delete/:craftId/:commId', (req, res) => {
         .then(craft => {
             // get the comment
             const theComment = craft.comments.id(commId)
-            // console.log('this is the comment that was found', theComment)
+            console.log('this is the comment that was found', theComment)
             // make sure the user is logged in
             if (req.session.loggedIn) {
                 // only let the author of the comment delete it
