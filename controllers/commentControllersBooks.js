@@ -14,7 +14,7 @@ const router = express.Router()
 ////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
-router.post("/commentBooks/:bookId", (req, res) => {
+router.post("/:bookId", (req, res) => {
     const bookId = req.params.bookId
 
     if (req.session.loggedIn) {

@@ -27,8 +27,8 @@ middleware(app)
 app.use('/auth', UserRouter)
 app.use('/books', BookRouter)
 app.use('/crafts', CraftRouter)
-app.use('/controllers/commentControllersBooks', CommentRouterBooks)
-app.use('/controllers/commentControllersCrafts', CommentRouterCrafts)
+app.use('/commentControllersBooks', CommentRouterBooks)
+app.use('/commentControllersCrafts', CommentRouterCrafts)
 app.use('/users', UserRouter)
 
 

@@ -14,7 +14,8 @@ const router = express.Router()
 ////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
-router.post("/commentCrafts/:craftId", (req, res) => {
+router.post("/:craftId", (req, res) => {
+    console.log("the route is being hit")
     const craftId = req.params.craftId
 
     if (req.session.loggedIn) {
