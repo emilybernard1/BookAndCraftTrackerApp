@@ -1,9 +1,10 @@
 body {
-    background-image: url("https://i0.wp.com/www.whitewoodandlinen.com/wp-content/uploads/2019/03/Book-Crafts-vintage-book-and-flowers.jpeg?resize=833%2C540&ssl=1");
+    background-image: url("https://i0.wp.com/www.whitewoodandlinen.com/wp-content/uploads/2019/03/Book-Crafts-equipment-for-project.jpeg?resize=768%2C1024&ssl=1");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-color: lavender;
+    font-family: Optima, Arial, sans-serif;
 }
 
 .card {
@@ -13,26 +14,20 @@ body {
 }
 
 .card-header {
-    background-color: blueviolet;
+    background-color: rgb(153, 72, 228);
+    border-radius: 10px;
+    margin-top: 5px;
 }
 
-.card-text, .card-header, .btn, .card-title {
-    font-family: Optima, Arial, sans-serif;
+.card-body {
+    border-radius: 10px;
 }
-
-.container-sm {
-    background-color: lavender;
-}
-
-/* .container-md {
-    background-color: lavender;
-} */
 
 .background {
     background-color: none;
 }
 
-.showBook, .showCraft{
+.showBook, .showCraft {
     background-color: lavender;
 }
 

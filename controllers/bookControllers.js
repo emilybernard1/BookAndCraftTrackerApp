@@ -51,13 +51,12 @@ router.get('/', (req, res) => {
 router.get('/mine', (req, res) => {
     // find the books, by ownership
     Book.find({ owner: req.session.userId })
-    // then display the fruits
+    // then display the books
         .then(books => {
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
 
-            // res.status(200).json({ fruits: fruits })
             res.render('books/index', { books, username, loggedIn, userId })
         })
     // or throw an error if there is one
