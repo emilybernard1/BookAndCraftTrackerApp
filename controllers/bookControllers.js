@@ -90,7 +90,7 @@ router.post('/', (req, res) => {
 
 
 // edit route -> GET that takes us to the edit form view
-router.get('edit/:id/', (req, res) => {
+router.get('/edit/:id', (req, res) => {
 	const username = req.session.username
     const loggedIn = req.session.loggedIn
     const userId = req.session.userId

@@ -43,7 +43,7 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
     // isolate the ids and save to vars for easy ref
     const bookId = req.params.bookId 
     const commId = req.params.commId
-    // get the fruit
+    // get the book
     Book.findById(bookId)
         .then(book => {
             // get the comment

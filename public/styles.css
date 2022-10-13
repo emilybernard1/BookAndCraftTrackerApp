@@ -17,6 +17,7 @@ body {
     background-color: rgb(153, 72, 228);
     border-radius: 10px;
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .card-body {
@@ -33,4 +34,12 @@ body {
 
 .commentsDiv {
     margin-left: 10px;
+}
+
+.btn-info {
+    text-align: left;
+}
+
+.btn-success {
+    margin-right: 10px;
 }

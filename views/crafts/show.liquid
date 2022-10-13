@@ -1,5 +1,6 @@
 {% layout 'layout.liquid' %}
 {% block content %}
+    <br>
     <div class="showCraft">
         <div class="container-md">
             <article>
@@ -32,7 +33,7 @@
             <div class="commentsDiv">
                 {% if loggedIn %}
                     <div class="col-md-6">
-                        <form action="/commentControllersCrafts/{{craft.id}}" method="POST">
+                        <form action="/commentCrafts/{{craft.id}}" method="POST">
                             <fieldset>
                                 <legend>Add Comment</legend>
                                 <label class="form-label">comment:</label>
