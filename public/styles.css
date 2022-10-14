@@ -10,11 +10,11 @@ body {
 .card {
     margin: 5px;
     border-radius: 10px;
-    background-color: lavender;
+    background-color: rgb(230, 227, 218);
 }
 
 .card-header {
-    background-color: rgb(153, 72, 228);
+    background-color: rgb(123, 166, 133);
     border-radius: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -29,7 +29,8 @@ body {
 }
 
 .showBook, .showCraft {
-    background-color: lavender;
+    background-color: rgb(230, 227, 218);
+    width: 450px;
 }
 
 .commentsDiv {
@@ -43,3 +44,12 @@ body {
 .btn-success {
     margin-right: 10px;
 }
+
+.btn-info {
+    background-color: rgb(137, 118, 188);
+}
+
+.container-sm {
+    width: 900px;
+}
+
