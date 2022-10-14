@@ -40,7 +40,7 @@ router.post("/:bookId", (req, res) => {
 // DELETE
 // only the author of the comment can delete it
 router.delete('/delete/:bookId/:commId', (req, res) => {
-    const bookId = req.params.bookId 
+    const bookId = req.params.bookId
     const commId = req.params.commId
     // get the book
     Book.findById(bookId)
@@ -65,7 +65,7 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
             }
         })
         .catch(err => res.redirect(`/error?error=${err}`))
-
+        
 })
 
 //////////////////////////////////////////

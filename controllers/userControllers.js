@@ -22,7 +22,7 @@ router.get('/signup', (req, res) => {
 // POST to send the signup info
 router.post('/signup', async (req, res) => {
 	// set the password to hashed password
-  req.body.password = await bcrypt.hash(
+	req.body.password = await bcrypt.hash(
 		req.body.password,
 		await bcrypt.genSalt(10)
 	)
@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
 					req.session.loggedIn = true
 					req.session.userId = user.id
 
-          			const { username, loggedIn, userId } = req.session
+					const { username, loggedIn, userId } = req.session
 					// redirect to /books if login is successful
 					res.redirect('/landingPage')
 				} else {
@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
 		// catch any other errors that occur
 		.catch((error) => {
 			// console.log('the error', error);
-			
+
 			res.redirect(`/error?error=${error}`)
 		})
 })
