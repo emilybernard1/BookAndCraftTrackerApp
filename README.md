@@ -107,6 +107,10 @@ const startCrafts = [
 - An app that looks at least as good as the Fruit App we did in class, with a nav bar at the top, and div boxes that display the users resources and allows the user to edit and delete them as well as make comments.
 
 
+### Routes
+---------------
+<img width="505" alt="RoutesTableProject2" src="https://user-images.githubusercontent.com/77028684/195872991-bd8c3328-89b0-4ed9-acfd-b822e9d30e55.png">
+
 
 
 ### WIREFRAMES
