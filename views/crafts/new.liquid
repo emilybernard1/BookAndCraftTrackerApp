@@ -1,49 +1,27 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<br>
-<div class="container-sm">
+  <br>
+  <div class="container-sm">
     <form action="/crafts" method="POST">
+      <br>
+      <fieldset>
+        <legend>Create New Craft</legend>
+        <label class="form-label">Name:
+        </label>
+        <input type="text" name="name" placeholder="enter the name of this craft" class="form-control">
+        <label class="form-label">Materials:</label>
+        <input type="text" name="materials" placeholder="enter the materials needed" class="form-control">
+        <label class="form-label">Are the Materials in Hand?:</label>
+        <input type="checkbox" name="inHand" class="form-check-input">
         <br>
-        <fieldset>
-            <legend>Create New Craft</legend>
-            <label class="form-label">Name: </label>
-            <input 
-                type="text" 
-                name="name" 
-                placeholder="enter the name of this craft"
-                class="form-control"
-            >
-            <label class="form-label">Materials:</label>
-            <input 
-                type="text" 
-                name="materials" 
-                placeholder="enter the materials needed" 
-                class="form-control"
-            >
-            <label class="form-label">Are the Materials in Hand?:</label>
-            <input 
-                type="checkbox" 
-                name="inHand" 
-                class="form-check-input"
-            > 
-            <br>
-              <label class="form-label">Stored:</label>
-            <input 
-                type="text" 
-                name="stored" 
-                placeholder="where is this craft stored?" 
-                class="form-control"
-            >
-            <label class="form-label">Approximate Time to Complete:</label>
-            <input 
-                type="text" 
-                name="time" 
-                class="form-control"
-            >
-            <br>
-        </fieldset>
-        <input type="submit" value="Create New Craft" class="btn btn-success">
+        <label class="form-label">Stored:</label>
+        <input type="text" name="stored" placeholder="where is this craft stored?" class="form-control">
+        <label class="form-label">Approximate Time to Complete:</label>
+        <input type="text" name="time" class="form-control">
+        <br>
+      </fieldset>
+      <input type="submit" value="Create New Craft" class="btn btn-success">
     </form>
     <br>
-</div>
-{% endblock %}
+  </div>
+{% endblock %}}

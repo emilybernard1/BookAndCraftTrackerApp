@@ -1,33 +1,39 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div class="background">
+  <div class="background">
     <br>
     <h3 class="display-6">My Books</h3>
     <div class="row">
-        {% for book in books %}
+      {% for book in books %}
         <div class="card" style="width: 18rem;">
-            <h4 class="card-header">{{ book.title }}</h4>
-            <div class="card-body">
-                <h7 class="card-title">
-                    Author: {{ book.author }}
-                </h7>
-                <br>
-                <br>
-                <p class="card-text">
-                    Genre: {{ book.genre }}
-                </p>
-                <p class="card-text">
-                    Pages: {{ book.pages }}
-                </p>
-                 <p class="card-text">
-                    Read: {{ book.read }}
-                </p>
-                <a href="/books/{{ book.id }}" class="btn btn-info">
-                    View {{ book.title }}
-                </a>
-            </div>
+          <h4 class="card-header">{{ book.title }}
+          </h4>
+          <div class="card-body">
+            <h7 class="card-title">
+              Author:
+              {{ book.author }}
+            </h7>
+            <br>
+            <br>
+            <p class="card-text">
+              Genre:
+              {{ book.genre }}
+            </p>
+            <p class="card-text">
+              Pages:
+              {{ book.pages }}
+            </p>
+            <p class="card-text">
+              Read:
+              {{ book.read }}
+            </p>
+            <a href="/books/{{ book.id }}" class="btn btn-info">
+              View
+              {{ book.title }}
+            </a>
+          </div>
         </div>
-        {% endfor %}
+      {% endfor %}
     </div>
-</div>
-{% endblock %}
+  </div>
+{% endblock %}}

@@ -14,16 +14,16 @@ db.on('open', () => {
     // bring in the array of starter books
     const startBooks = [
         { title: "La Fille qui lisait dans le métro", author: "Christine Féret-Fleury", genre: "French Literature", pages: 170, read: false },
-        { title: "The Mystwick School of Music Craft", author: "Jessica Khoury", genre: "Young Adult Fantasy", pages: 357,  read: false },
+        { title: "The Mystwick School of Music Craft", author: "Jessica Khoury", genre: "Young Adult Fantasy", pages: 357, read: false },
         { title: "An Island Wedding", author: "Jenny Colgan", genre: "Chick Lit", pages: 386, read: false },
         { title: "Hocus Pocus 2", author: "FreeForm Books", genre: "Fantasy", pages: 318, read: true },
-        { title: "The Little Shop of Found Things", author: "Paula Brackston", genre: "Chick Lit", pages: 307, read: false }, 
+        { title: "The Little Shop of Found Things", author: "Paula Brackston", genre: "Chick Lit", pages: 307, read: false },
         { title: "Resistance is Futile", author: "Jenny T. Colgan", genre: "Chick Lit", pages: 340, read: false },
         { title: "Hail Mary", author: "Andy Weir", genre: "Science Fiction", pages: 476, read: false },
         { title: "Artemis", author: "Andy Weir", genre: "Science Fiction", pages: 305, read: false },
         { title: "Les Petites Pensionnaires", author: "Hilary McKay", genre: "French Literature", pages: 347, read: false },
         { title: "The Ickabog", author: "JK Rowling", genre: "YA Fantasy", pages: 274, read: false }
-  ]
+    ]
 
     // delete all the existing books
     Book.deleteMany({ owner: null })

@@ -28,16 +28,16 @@ const { Schema, model } = mongoose
 // Our schema and model for the craft resource
 ///////////////////////////////////////////////////////////
 const craftSchema = new Schema({
-		name: { type: String, required: true },
-		materials: { type: String, required: true },
-        inHand: { type: Boolean, required: false },
-		stored: { type: String, required: true },
-		time: { type: String, required: true },
-		owner: {
-			type: Schema.Types.ObjectID,
-			ref: 'User',
-		},
-		comments: [commentSchema]
+	name: { type: String, required: true },
+	materials: { type: String, required: true },
+	inHand: { type: Boolean, required: false },
+	stored: { type: String, required: true },
+	time: { type: String, required: true },
+	owner: {
+		type: Schema.Types.ObjectID,
+		ref: 'User',
+	},
+	comments: [commentSchema]
 }, { timestamps: true })
 
 const Craft = model('Craft', craftSchema)

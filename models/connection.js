@@ -21,10 +21,10 @@ mongoose.connect(process.env.DATABASE_URL, {
 const db = mongoose.connection
 
 // create some notification
-mongoose.connection 
-	db.on('open', () => console.log('You are connected to mongo'))
-	db.on('close', () => console.log('You are disconnected from mongo'))
-	db.on('error', (error) => console.log(error))
+mongoose.connection
+db.on('open', () => console.log('You are connected to mongo'))
+db.on('close', () => console.log('You are disconnected from mongo'))
+db.on('error', (error) => console.log(error))
 
 /////////////////////////////////////////////
 // Export our connection

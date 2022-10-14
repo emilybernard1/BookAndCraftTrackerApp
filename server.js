@@ -5,7 +5,7 @@ require("dotenv").config() // make env variables available
 const express = require("express")
 const middleware = require('./utils/middleware')
 const BookRouter = require('./controllers/bookControllers')
-const CraftRouter =  require('./controllers/craftControllers')
+const CraftRouter = require('./controllers/craftControllers')
 const UserRouter = require('./controllers/userControllers')
 const CommentRouterBooks = require('./controllers/commentControllersBooks')
 const CommentRouterCrafts = require('./controllers/commentControllersCrafts')
@@ -25,12 +25,12 @@ middleware(app)
 /////////////////////////////////////////////
 app.get('/', (req, res) => {
     const { username, userId, loggedIn } = req.session
-	res.render('index.liquid', { loggedIn, username, userId })
+    res.render('index.liquid', { loggedIn, username, userId })
 })
 
 app.get('/landingPage', (req, res) => {
     const { username, userId, loggedIn } = req.session
-	res.render('landing/landingPage', { loggedIn, username, userId })
+    res.render('landing/landingPage', { loggedIn, username, userId })
 })
 
 ////////////////////

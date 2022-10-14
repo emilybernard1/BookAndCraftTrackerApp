@@ -1,48 +1,25 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<br>
-<div class="container-sm">
+  <br>
+  <div class="container-sm">
     <form action="/books" method="POST">
-        <br>
-        <fieldset>
-            <legend>Create New Book</legend>
-            <label class="form-label">Title: </label>
-            <input 
-                type="text" 
-                name="title" 
-                placeholder="enter book title"
-                class="form-control"
-            >
-            <label class="form-label">Author:</label>
-            <input 
-                type="text" 
-                name="author" 
-                placeholder="enter the author's name" 
-                class="form-control"
-            >
-            <label class="form-label">Genre:</label>
-            <input 
-                type="text" 
-                name="genre" 
-                placeholder="enter the book's genre" 
-                class="form-control"
-            >
-              <label class="form-label">Pages:</label>
-            <input 
-                type="number" 
-                name="pages" 
-                placeholder="enter the number of pages" 
-                class="form-control"
-            >
-            <label class="form-label">Read:</label>
-            <input 
-                type="checkbox" 
-                name="read" 
-                class="form-check-input"
-            >
-        </fieldset>
-        <input type="submit" value="Create New Book" class="btn btn-success">
+      <br>
+      <fieldset>
+        <legend>Create New Book</legend>
+        <label class="form-label">Title:
+        </label>
+        <input type="text" name="title" placeholder="enter book title" class="form-control">
+        <label class="form-label">Author:</label>
+        <input type="text" name="author" placeholder="enter the author's name" class="form-control">
+        <label class="form-label">Genre:</label>
+        <input type="text" name="genre" placeholder="enter the book's genre" class="form-control">
+        <label class="form-label">Pages:</label>
+        <input type="number" name="pages" placeholder="enter the number of pages" class="form-control">
+        <label class="form-label">Read:</label>
+        <input type="checkbox" name="read" class="form-check-input">
+      </fieldset>
+      <input type="submit" value="Create New Book" class="btn btn-success">
     </form>
     <br>
-</div>
-{% endblock %}
+  </div>
+{% endblock %}}

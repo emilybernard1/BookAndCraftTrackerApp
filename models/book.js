@@ -26,15 +26,15 @@ const { Schema, model } = mongoose
 // Our schema and model for the book resource
 //////////////////////////////////////////////////////////
 const bookSchema = new Schema({
-		title: { type: String, required: true },
-		author: { type: String, required: true },
-        genre: { type: String, required: true },
-		pages: { type: Number, required: true },
-		read: { type: Boolean, required: false },
-		owner: {
-			type: Schema.Types.ObjectID,
-			ref: 'User',
-		},
+	title: { type: String, required: true },
+	author: { type: String, required: true },
+	genre: { type: String, required: true },
+	pages: { type: Number, required: true },
+	read: { type: Boolean, required: false },
+	owner: {
+		type: Schema.Types.ObjectID,
+		ref: 'User',
+	},
 	comments: [commentSchema]
 }, { timestamps: true })
 

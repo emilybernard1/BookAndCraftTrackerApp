@@ -28,7 +28,8 @@ body {
     background-color: none;
 }
 
-.showBook, .showCraft {
+.showBook,
+.showCraft {
     background-color: rgb(230, 227, 218);
     width: 450px;
 }
@@ -52,4 +53,3 @@ body {
 .container-sm {
     width: 900px;
 }
-
