@@ -11,6 +11,7 @@ body {
     margin: 5px;
     border-radius: 10px;
     background-color: rgb(230, 227, 218);
+    filter: drop-shadow(5px 5px 5px #7c7f88);
 }
 
 .card-header {
@@ -18,6 +19,10 @@ body {
     border-radius: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Rainy Wind;
+    filter: drop-shadow(5px 5px 5px #7c7f88);
 }
 
 .card-body {
@@ -44,12 +49,17 @@ body {
 
 .btn-success {
     margin-right: 10px;
+    filter: drop-shadow(5px 5px 5px #5b5e65);
 }
 
 .btn-info {
-    background-color: rgb(137, 118, 188);
+    background-color: rgb(131, 126, 215);
+    filter: drop-shadow(5px 5px 5px #7c7f88);
+    font-family: Rainy Wind;
+    font-size: 24px;
 }
 
 .container-sm {
     width: 900px;
 }
+
