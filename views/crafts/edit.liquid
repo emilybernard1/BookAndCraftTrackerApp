@@ -2,9 +2,6 @@
 {% block content %}
     <br>
     <div class="container-sm">
-        {%- comment -%} change the action {%- endcomment -%}
-        {%- comment -%} add values to input fields {%- endcomment -%}
-        {%- comment -%} add a back button {%- endcomment -%}
         <form action="/crafts/{{craft.id}}?_method=PUT" method="POST">
             <fieldset>
                 <legend>Edit {{craft.name}}</legend>
@@ -58,5 +55,4 @@
             >
         </form>
     </div>
-
 {% endblock %}

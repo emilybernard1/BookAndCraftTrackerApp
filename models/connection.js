@@ -3,7 +3,7 @@
 /////////////////////////////////////////////
 // make our .env variables available via process.env
 require('dotenv').config()
-// import mongoose
+
 const mongoose = require('mongoose')
 
 ////////////////////////////////////////////

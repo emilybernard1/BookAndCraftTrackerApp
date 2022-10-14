@@ -32,7 +32,6 @@ router.post("/:craftId", (req, res) => {
             return craft.save()
         })
         .then(craft => {
-            // res.status(200).json({ craft: craft })
             res.redirect(`/crafts/${craft.id}`)
         })
         .catch(err => res.redirect(`/error?error=${err}`))
@@ -57,8 +56,6 @@ router.delete('/delete/:craftId/:commId', (req, res) => {
                     theComment.remove()
                     craft.save()
                     res.redirect(`/crafts/${craft.id}`)
-                    // return the saved craft
-                    // return craft.save()
                 } else {
                     const err = 'you%20are%20not%20authorized%20for%20this%20action'
                     res.redirect(`/error?error=${err}`)

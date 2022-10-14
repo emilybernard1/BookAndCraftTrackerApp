@@ -40,15 +40,12 @@ router.post("/:bookId", (req, res) => {
 // DELETE
 // only the author of the comment can delete it
 router.delete('/delete/:bookId/:commId', (req, res) => {
-    // isolate the ids and save to vars for easy ref
     const bookId = req.params.bookId 
     const commId = req.params.commId
     // get the book
     Book.findById(bookId)
         .then(book => {
             // get the comment
-            // subdocs have a built in method that you can use to access specific subdocuments when you need to.
-            // this built in method is called .id()
             const theComment = book.comments.id(commId)
             console.log('this is the comment that was found', theComment)
             // make sure the user is logged in
@@ -58,8 +55,6 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
                     theComment.remove()
                     book.save()
                     res.redirect(`/books/${book.id}`)
-                    // return the saved book
-                    // return book.save()
                 } else {
                     const err = 'you%20are%20not%20authorized%20for%20this%20action'
                     res.redirect(`/error?error=${err}`)
@@ -69,7 +64,6 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
                 res.redirect(`/error?error=${err}`)
             }
         })
-        // send an error if error
         .catch(err => res.redirect(`/error?error=${err}`))
 
 })

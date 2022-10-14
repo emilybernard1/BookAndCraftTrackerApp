@@ -7,8 +7,6 @@ const Craft =  require('./craft')
 ///////////////////////////////////////
 // Seed Script code
 ///////////////////////////////////////
-// first we need our connection saved to a variable for easy reference
-// This script will be run, with the command in the terminal `npm run seed`
 const db = mongoose.connection
 
 

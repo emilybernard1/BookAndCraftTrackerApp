@@ -61,8 +61,6 @@ router.get('/mine', (req, res) => {
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
-
-            // res.status(200).json({ crafts: crafts })
             res.render('crafts/index', { crafts, username, loggedIn, userId })
         })
     // or throw an error if there is one
@@ -80,7 +78,6 @@ router.post('/', (req, res) => {
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
-			// console.log('this was returned from create', craft)
 			res.redirect('/crafts')
 		})
 		.catch(error => {
@@ -122,7 +119,6 @@ router.put("/:id", (req, res) => {
             }
         })
         .then(() => {
-            // console.log('returned from update promise', data)
             res.redirect(`/crafts/${id}`)
         })
         .catch(err => res.redirect(`/error?error=${err}`))
@@ -137,7 +133,6 @@ router.get('/:id', (req, res) => {
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
-            // res.json({ craft: craft })
             res.render('crafts/show', { craft, username, loggedIn, userId })
         })
 })
@@ -153,7 +148,6 @@ router.delete('/:id', (req, res) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
-
 
 
 //////////////////////////////////////////

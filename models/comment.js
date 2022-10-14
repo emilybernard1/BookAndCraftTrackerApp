@@ -3,8 +3,6 @@
 //////////////////////////////////////////////////////////
 const mongoose = require('./connection')
 
-// we're going to pull the Schema and model from mongoose
-// we'll use a syntax called "destructuring"
 const { Schema } = mongoose
 
 // comment schema
