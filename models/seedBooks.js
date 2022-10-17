@@ -30,7 +30,7 @@ db.on('open', () => {
         .then(deletedBooks => {
             console.log('this is what .deleteMany returns', deletedBooks)
 
-            // create a bunch of new fruits from startFruits
+            // create a bunch of new fruits from startBooks
             Book.create(startBooks)
                 .then(data => {
                     console.log('here are the newly created books', data)

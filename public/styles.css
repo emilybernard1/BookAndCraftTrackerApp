@@ -49,6 +49,7 @@ body {
 
 .btn-success {
     margin-right: 10px;
+    margin-top: 5px;
     filter: drop-shadow(5px 5px 5px #5b5e65);
 }
 
@@ -61,5 +62,18 @@ body {
 
 .container-sm {
     width: 900px;
+    padding-left: 0;
 }
 
+.form-control {
+    filter: drop-shadow(5px 5px 5px #7c7f88);
+}
+
+.btn-danger, .btn-primary {
+    filter: drop-shadow(5px 5px 5px #7c7f88);
+    margin-right: 5px;
+}
+
+h1, h2, h3, h4 {
+    filter: drop-shadow(5px 5px 5px #7c7f88);
+}
