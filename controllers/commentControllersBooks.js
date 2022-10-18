@@ -14,6 +14,7 @@ const router = express.Router()
 ////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
+// Nit: choose double or single quotes
 router.post("/:bookId", (req, res) => {
     const bookId = req.params.bookId
 
@@ -47,6 +48,7 @@ router.delete('/delete/:bookId/:commId', (req, res) => {
         .then(book => {
             // get the comment
             const theComment = book.comments.id(commId)
+            // Nit: remove console.log
             console.log('this is the comment that was found', theComment)
             // make sure the user is logged in
             if (req.session.loggedIn) {

@@ -48,6 +48,7 @@ router.get('/', (req, res) => {
 
 // new route -> GET route that renders our page with the form
 router.get('/new', (req, res) => {
+	// Nit: can remove `userId`
     const { username, userId, loggedIn } = req.session
     res.render('crafts/new', { username, loggedIn })
 })
@@ -72,9 +73,12 @@ router.post('/', (req, res) => {
 	req.body.inHand = req.body.inHand === 'on' ? true : false
 
 	req.body.owner = req.session.userId
+	// Nit: remove console.og
 	console.log('the craft from the form', req.body)
 	Craft.create(req.body)
+	// Nit: can remove `crafts` since it's not being used in scope. () => {}
 		.then(crafts => {
+			// Nit: can remove following 3 lines since they are not being used in scope
             const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
@@ -103,11 +107,13 @@ router.get('/edit/:id', (req, res) => {
 
 // PUT request
 // update route -> updates a specific craft
+// Nit: choose either doulbe or single quotes
 router.put("/:id", (req, res) => {
     console.log("req.body initially", req.body)
     const id = req.params.id
 
     req.body.inHand = req.body.inHand === 'on' ? true : false
+	// Nit: remove console.log
     console.log('req.body after changing checkbox value', req.body)
     Craft.findById(id)
         .then(craft => {
@@ -141,6 +147,7 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 	const craftId = req.params.id
 	Craft.findByIdAndRemove(craftId)
+	// Nit: can remove `craft`
 		.then(craft => {
 			res.redirect('/crafts')
 		})

@@ -74,9 +74,12 @@ router.post('/', (req, res) => {
 	req.body.read = req.body.read === 'on' ? true : false
 	
 	req.body.owner = req.session.userId
+	// Nit: remove console.log
 	console.log('the book from the form', req.body)
 	Book.create(req.body)
+	// Nit: can be an empty invocation since `books` is not being used here () => {}
 		.then(books => {
+			// Nit: can remove these 3 following lines you are not using them in this scope
 			const username = req.session.username
             const loggedIn = req.session.loggedIn
             const userId = req.session.userId
@@ -107,11 +110,13 @@ router.get('/edit/:id', (req, res) => {
 
 // PUT request
 // update route -> updates a specific book
+// Nit: choose either double quotes or single qutoes
 router.put("/:id", (req, res) => {
     console.log("req.body initially", req.body)
     const id = req.params.id
 
     req.body.read = req.body.read === 'on' ? true : false
+	// Nit: Remove console.log
     console.log('req.body after changing checkbox value', req.body)
     Book.findById(id)
         .then(book => {
@@ -147,6 +152,7 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 	const bookId = req.params.id
 	Book.findByIdAndRemove(bookId)
+	// Nit: same as above can remove `book` here since we are not using it
 		.then(book => {
 			res.redirect('/books')
 		})

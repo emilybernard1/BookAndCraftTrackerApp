@@ -14,7 +14,9 @@ const router = express.Router()
 ////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
+// Nit: choose either double or single quotes
 router.post("/:craftId", (req, res) => {
+    // Nit: remove console.log
     console.log("the route is being hit")
     const craftId = req.params.craftId
 
@@ -48,6 +50,7 @@ router.delete('/delete/:craftId/:commId', (req, res) => {
         .then(craft => {
             // get the comment
             const theComment = craft.comments.id(commId)
+            // Nit: remove console.log
             console.log('this is the comment that was found', theComment)
             // make sure the user is logged in
             if (req.session.loggedIn) {
