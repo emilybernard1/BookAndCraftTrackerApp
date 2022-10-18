@@ -5,6 +5,7 @@
     <h3 class="display-6">My Books</h3>
     <div class="row">
       {% for book in books %}
+      {% if book.owner == undefined or book.owner == userId %}
         <div class="card" style="width: 18rem;">
           <h4 class="card-header">{{ book.title }}
           </h4>
@@ -32,6 +33,7 @@
             </a>
           </div>
         </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>

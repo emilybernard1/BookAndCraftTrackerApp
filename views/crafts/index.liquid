@@ -5,6 +5,7 @@
     <h3 class="display-6">My Crafts</h3>
     <div class="row">
       {% for craft in crafts %}
+      {% if craft.owner == undefined or craft.owner == userId %}
         <div class="card" style="width: 18rem;">
           <h4 class="card-header">{{ craft.name }}
           </h4>
@@ -29,10 +30,10 @@
             </p>
             <a href="/crafts/{{ craft.id }}" class="btn btn-info">
               View this craft
-              {%- comment -%} {{ craft.name }} {%- endcomment -%}
             </a>
           </div>
         </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
